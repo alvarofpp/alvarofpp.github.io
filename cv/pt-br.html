@@ -31,15 +31,11 @@
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 
-    <style type="text/css">
-        .devicons {
-            font-size: 5rem;
-        }
+    <!-- Emoji CSS -->
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
 
-        .img-modal-header {
-            width: 100%;
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link href="../css/custom.css" rel="stylesheet">
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar">
 <div id="main-wrapper">
@@ -53,22 +49,33 @@
     <div class="columns-block container">
         <div class="left-col-block blocks">
             <header class="header theiaStickySidebar">
+                <div>
+                    <a href="#">
+                        <i class="em em-flag-br" aria-role="presentation" aria-label="Brazil Flag"></i>
+                    </a>
+                    <a href="#">
+                        <i class="em em-flag-um" aria-role="presentation" aria-label="U.S. Outlying Islands Flag"></i>
+                    </a>
+                    <!--
+                    <a href="#">
+                        <i class="em em-flag-mf" aria-role="presentation" aria-label="St. Martin Flag"></i>
+                    </a>
+                    -->
+                </div>
                 <div class="profile-img">
                     <img src="../img/img-profile.jpeg" class="img-responsive" alt=""/>
                 </div>
                 <div class="content">
                     <h1>Álvaro Ferreira Pires de Paiva</h1>
                     <span class="lead">Desenvolvedor web e analista de dados</span>
-
                     <div class="about-text">
                         <p>
                             Técnico em informática pelo Instituto Federal de Educação, Ciência e Tecnologia do Rio
                             Grande do Norte (IFRN), cursando Bacharelado em Tecnologia da Informação na Universidade
-                            Federal do Rio Grande do Norte (UFRN), tenho atuado nos últimos 3 anos como pesquisador e
+                            Federal do Rio Grande do Norte (UFRN), tenho atuado nos últimos 4 anos como pesquisador e
                             desenvolvedor de tecnologias para a saúde, realizando desde desenvolvimento de sistemas web
                             até análises de dados de saúde.
                         </p>
-
                         <p>
                             Possuo experiência em projetos a nível governamental e principalmente com foco em saúde.
                         </p>
@@ -102,7 +109,6 @@
                         </li>
                     </ul>
                 </div>
-
             </header>
             <!-- .header-->
         </div>
@@ -111,7 +117,6 @@
 
         <div class="right-col-block blocks">
             <div class="theiaStickySidebar">
-
                 <section class="section-wrapper section-education">
                     <div class="container-fluid">
                         <div class="row">
@@ -142,7 +147,6 @@
                         <!--.row-->
                     </div>
                     <!-- .container-fluid -->
-
                 </section>
                 <!-- .section-education -->
 
@@ -164,22 +168,21 @@
                                         <small>Natal-RN, Brasil</small>
                                     </h4>
 
-                                    <p>
+                                    <br/>
                                     <ul>
                                         <li>Concepção, desenvolvimento e manutenção de sistemas web;</li>
                                         <li>Processamento e análises de dados;</li>
                                         <li>Avaliação de sistemas.</li>
                                     </ul>
-                                    </p>
                                 </div>
                             </div>
                         </div>
                         <!--.row-->
                     </div>
                     <!-- .container-fluid -->
-
                 </section>
                 <!-- .section-experience -->
+
                 <section class="expertise-wrapper section-wrapper gray-bg">
                     <div class="container-fluid">
                         <div class="row">
@@ -189,11 +192,24 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- .row -->
-
                         <div class="row">
                             <div class="col-md-12 text-center">
                                 <small>Ministrou</small>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="expertise-item">
+                                    <h3>
+                                        Facilitando o uso de RegEx em Python através de um pacote de código aberto
+                                        <small>Palestra - Abr. 2019</small>
+                                    </h3>
+                                    <p>
+                                        Palestra apresentada no <a
+                                            href="https://flisol.info/FLISOL2019/Brasil/Natal">FLISol 2019</a> em
+                                        Natal-RN
+                                        sobre <a href="https://pt.wikipedia.org/wiki/Express%C3%A3o_regular">RegEx</a>
+                                        usando o pacote Python <a href="https://github.com/alvarofpp/mre">mre</a>.
+                                    </p>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="expertise-item">
@@ -230,7 +246,18 @@
                                     </p>
                                 </div>
                             </div>
-
+                            <div class="col-md-6">
+                                <div class="expertise-item">
+                                    <h3>
+                                        User Experience Design<br/>
+                                        <small>Curso - Jul. 2019</small>
+                                    </h3>
+                                    <p>
+                                        Realizou o curso User Experience Design oferecido pela
+                                        Escola Superior de Propaganda e Marketing (ESPM), Natal-RN.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="expertise-item">
                                     <h3>
@@ -263,8 +290,8 @@
                                         Cursos do DataCamp<br/>
                                         <small>Curso - 2018.2</small>
                                     </h3>
-                                    <p>
-                                        Completou os seguintes cursos na plataforma <a href="https://www.datacamp.com/">DataCamp</a>:
+                                    <span>Completou os seguintes cursos na plataforma <a
+                                            href="https://www.datacamp.com/">DataCamp</a>:</span>
                                     <ul>
                                         <li>Introduction to Git for Data Science</li>
                                         <li>Intro to SQL for Data Science</li>
@@ -275,12 +302,9 @@
                                         <li>Python Data Science Toolbox (Part 1)</li>
                                         <li>Python Data Science Toolbox (Part 2)</li>
                                     </ul>
-                                    </p>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </section>
                 <!-- .expertise-wrapper -->
@@ -325,7 +349,6 @@
                         <!--.row-->
                     </div>
                     <!-- .container-fluid -->
-
                 </section>
                 <!-- .section-education -->
 
@@ -338,8 +361,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- .row -->
-
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content-item">
@@ -348,7 +369,6 @@
                                         Acadêmico
                                         <small>Artigo acadêmico - Jul. 2018</small>
                                     </h3>
-
                                     <p>
                                         Apresentação do artigo "Centralização das Escolas Técnicas do SUS Através da
                                         Construção de Sistema Acadêmico" no 12º Congresso Brasileiro de Saúde Coletiva,
@@ -363,19 +383,15 @@
                                         bibliográficas de acordo com a ABNT
                                         <small>Artigo acadêmico - Nov. 2015</small>
                                     </h3>
-
                                     <p>
                                         Apresentação do artigo "Desenvolvimento de aplicativo Android para produção de
                                         referências bibliográficas de acordo com a ABNT" na I Semana de Ciência,
                                         Tecnologia e Extensão do IFRN - SECITEX, em novembro de 2015 em Santa Cruz-RN,
                                         Brasil.
                                     </p>
-
                                 </div>
                             </div>
                         </div>
-                        <!-- .row -->
-
                     </div>
                 </section>
 
@@ -388,16 +404,25 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- .row -->
-
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content-item">
                                     <h3>
-                                        Sistema de Gestão Acadêmica da RET-SUS
-                                        <small>BR 51 2019 002740 0</small>
+                                        GeoSUS - Gestão de Pacientes
+                                        <small>Expedida em 31 de dez. de de 2019. BR 51 2019 003008 7</small>
                                     </h3>
-
+                                    <p>
+                                        Acompanhamento de pacientes em tratamento de forma multinível no sistema único
+                                        de saúde (SUS).
+                                        <br/><br/>
+                                        Veja o registro de software <a href="../files/patents/GEOSUS.pdf">clicando aqui</a>.
+                                    </p>
+                                </div>
+                                <div class="content-item">
+                                    <h3>
+                                        Sistema de Gestão Acadêmica da RET-SUS
+                                        <small>Expedida em 29 de nov. de 2019. BR 51 2019 002740 0</small>
+                                    </h3>
                                     <p>
                                         O Sistema de Gestão Acadêmica da RET-SUS trata-se de uma ação que foi
                                         desenvolvida pelo Departamento de Gestão da Educação na Saúde (DEGES), da
@@ -405,27 +430,29 @@
                                         da Saúde, por meio da Coordenação-Geral de Ações Técnicas em Educação na Saúde
                                         (CGATES), e elaborado pelo Laboratório de Inovação Tecnológica em Saúde (LAIS),
                                         da Universidade Federal do Rio Grande do Norte (UFRN).
+                                        <br/><br/>
+                                        Acesse o sistema <a href="https://retsus.ufrn.br/login">clicando aqui</a>.<br/>
+                                        Veja o registro de software <a href="../files/patents/RET-SUS.pdf">clicando aqui</a>.
                                     </p>
                                 </div>
                                 <div class="content-item">
                                     <h3>
                                         SiNNP-SUS (Sistema Nacional de negociação permanente do SUS)
-                                        <small>BR 51 2018 000096 7</small>
+                                        <small>Expedida em 30 de jan. de 2018. BR 51 2018 000096 7</small>
                                     </h3>
-
                                     <p>
                                         O Sistema Nacional de Negociação Permanente do SUS, SiNNP-SUS, foi criado no
                                         âmbito do Sistema Único de Saúde, aprovado pela MNNP-SUS e é constituído pelo
                                         conjunto de Mesas de Negociação Permanente, instituídas regularmente, de forma
                                         articulada, nos níveis Federal, Estaduais e Municipais, respeitada a autonomia
                                         de cada ente político.
+                                        <br/><br/>
+                                        Acesse o sistema <a href="https://mesadenegociacao.navi.ifrn.edu.br/">clicando aqui</a>.<br/>
+                                        Veja o registro de software <a href="../files/patents/SiNNP-SUS.pdf">clicando aqui</a>.
                                     </p>
-
                                 </div>
                             </div>
                         </div>
-                        <!-- .row -->
-
                     </div>
                 </section>
                 <!-- .section-publications -->
@@ -435,42 +462,50 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="section-title">
-                                    <h2>Habilidades</h2>
+                                    <h2>Stacks</h2>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
-                                <b>Linguagens</b>:<br/>
+                            <div class="col-md-4">
                                 <i class="devicons devicon-php-plain colored"></i>
-                                <i class="devicons devicon-python-plain-wordmark colored"></i>
-                                <i class="devicons devicon-java-plain-wordmark colored"></i>
-                                <i class="devicons devicon-postgresql-plain-wordmark colored"></i>
-                                <i class="devicons devicon-javascript-plain colored"></i>
-                                <i class="devicons devicon-html5-plain-wordmark colored"></i>
-                                <i class="devicons devicon-css3-plain-wordmark colored"></i>
-                                <hr/>
-                                <b>Ferramentas e plataformas</b>:<br/>
                                 <i class="devicons devicon-laravel-plain-wordmark colored"></i>
-                                <!-- <i class="devicons devicon-vuejs-plain colored"></i> -->
-                                <i class="devicons devicon-jquery-plain-wordmark colored"></i>
-                                <i class="devicons devicon-git-plain-wordmark colored"></i>
+                                <br/>
+                                <b>Desenvolvedor Web</b>:<br/>
+                                <ul>
+                                    <li>PHP</li>
+                                    <li>Laravel</li>
+                                    <li>Vue.js</li>
+                                    <li>Docker</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="devicons devicon-python-plain-wordmark colored"></i>
+                                <i class="devicons devicon-postgresql-plain-wordmark colored"></i>
+                                <br/>
+                                <b>Analista de dados</b>:<br/>
+                                <ul>
+                                    <li>Python e Cython</li>
+                                    <li>SQL e NoSQL</li>
+                                    <li>Inteligência artificial</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="devicons devicon-java-plain-wordmark colored"></i>
                                 <i class="devicons devicon-android-plain-wordmark colored"></i>
-                                <i class="devicons devicon-bootstrap-plain-wordmark colored"></i>
-                                <i class="devicons devicon-docker-plain colored"></i>
-                                <hr/>
-                                <b>IDE's</b>:<br/>
-                                <i class="devicons devicon-phpstorm-plain-wordmark colored"></i>
-                                <i class="devicons devicon-pycharm-plain-wordmark colored"></i>
-                                <i class="devicons devicon-intellij-plain-wordmark colored"></i>
-                                <hr/>
+                                <br/>
+                                <b>Desenvolvedor Mobile</b>:<br/>
+                                <ul>
+                                    <li>Java e Kotlin</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12">
                                 <b>Outros</b>:<br/>
                                 <span>
-                    Possui experiência em documentação, UX, NoSQL, analise de dados e inteligência artificial.
-                </span>
+                                    Possui experiência em Git, documentação e UX.
+                                </span>
                             </div>
                         </div>
-                        <!--.row -->
                     </div>
                     <!-- .container-fluid -->
                 </section>
@@ -486,82 +521,86 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <a class="portfolio-item" href="#" data-toggle="modal" data-target="#portolio-sar">
                                     <div class="portfolio-thumb">
                                         <img src="../img/portfolio/sar.png"/>
                                     </div>
-
                                     <div class="portfolio-info">
                                         <h3>SAR</h3>
                                         <small>Aplicativo mobile</small>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <a class="portfolio-item" href="#" data-toggle="modal" data-target="#portolio-fisioapp">
                                     <div class="portfolio-thumb">
                                         <img src="../img/portfolio/fisioapp.png"/>
                                     </div>
-
                                     <div class="portfolio-info">
                                         <h3>FisioApp</h3>
                                         <small>Aplicativo mobile</small>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-md-6">
-                                <a class="portfolio-item" href="#" data-toggle="modal"
-                                   data-target="#portolio-sinnp-sus">
-                                    <div class="portfolio-thumb">
-                                        <img src="../img/portfolio/sinnp.png"/>
-                                    </div>
-
-                                    <div class="portfolio-info">
-                                        <h3>SiNNP-SUS</h3>
-                                        <small>Sistema Web</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-6">
-                                <a class="portfolio-item" href="#" data-toggle="modal" data-target="#portolio-mre">
-                                    <div class="portfolio-thumb">
-                                        <img src="../img/portfolio/mre.png"/>
-                                    </div>
-
-                                    <div class="portfolio-info">
-                                        <h3>MRE</h3>
-                                        <small>Pacote Python</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-6">
-                                <a class="portfolio-item" href="#" data-toggle="modal"
-                                   data-target="#portolio-validate-docbr">
-                                    <div class="portfolio-thumb">
-                                        <img src="../img/portfolio/validate-docbr.png"/>
-                                    </div>
-
-                                    <div class="portfolio-info">
-                                        <h3>validate-docbr</h3>
-                                        <small>Pacote Python</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <a class="portfolio-item" href="#" data-toggle="modal" data-target="#portolio-odufrn">
                                     <div class="portfolio-thumb">
                                         <img src="../img/portfolio/odufrn-logo.png"/>
                                     </div>
-
                                     <div class="portfolio-info">
                                         <h3>Open Data UFRN</h3>
                                         <small>Organização</small>
                                     </div>
                                 </a>
                             </div>
+                            <div class="col-md-4">
+                                <a class="portfolio-item" href="#" data-toggle="modal" data-target="#portolio-mre">
+                                    <div class="portfolio-thumb">
+                                        <img src="../img/portfolio/mre.png"/>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>MRE</h3>
+                                        <small>Pacote Python</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="portfolio-item" href="#" data-toggle="modal"
+                                   data-target="#portolio-validate-docbr">
+                                    <div class="portfolio-thumb">
+                                        <img src="../img/portfolio/validate-docbr.png"/>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>validate-docbr</h3>
+                                        <small>Pacote Python</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="portfolio-item" href="#" data-toggle="modal"
+                                   data-target="#portolio-adt-extension">
+                                    <div class="portfolio-thumb">
+                                        <img src="../img/portfolio/adt-extension.png"/>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>adt-extension</h3>
+                                        <small>Pacote Python</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="portfolio-item" href="#" data-toggle="modal" data-target="#portolio-laravel-warehouse">
+                                    <div class="portfolio-thumb">
+                                        <img src="../img/portfolio/laravel-warehouse.png"/>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Laravel Warehouse</h3>
+                                        <small>Repositório</small>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <!-- /.row -->
                     </div>
                 </section>
                 <!-- .portfolio -->
@@ -578,7 +617,7 @@
         </button>
       </div> -->
                             <div class="modal-body">
-                                <img class="img-modal-header" src="../img/portfolio/modals/m-sar.png"/>
+                                <img class="img-modal-header" src="../img/portfolio/modals/sar.png"/>
 
                                 <b>Salvando As Referências</b>
                                 <br/>
@@ -595,9 +634,9 @@
 
                                 <hr/>
                                 <span class="categories">
-            <i class="fa fa-tag"></i>
-            Android, ABNT
-        </span>
+                                    <i class="fa fa-tag"></i>
+                                    Android, ABNT
+                                </span>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -611,7 +650,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <img class="img-modal-header" src="../img/portfolio/modals/m-fisioapp.png"/>
+                                <img class="img-modal-header" src="../img/portfolio/modals/fisioapp.png"/>
 
                                 <b>FisioApp</b>
                                 <br/>
@@ -628,51 +667,9 @@
 
                                 <hr/>
                                 <span class="categories">
-            <i class="fa fa-tag"></i>
-            Android, Fisioterapia
-        </span>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal fade" id="portolio-sinnp-sus" tabindex="-1" role="dialog" aria-labelledby=""
-                     aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <img class="img-modal-header" src="../img/portfolio/modals/m-sinnp.png"/>
-
-                                <b>Sistema Nacional de Negociação Permanente do SUS</b>
-                                <br/>
-
-                                O Sistema Nacional de Negociação Permanente do SUS, SiNNP-SUS, foi criado no âmbito do
-                                Sistema Único de Saúde, aprovado pela MNNP-SUS e é constituído pelo conjunto de Mesas de
-                                Negociação Permanente, instituídas regularmente, de forma articulada, nos níveis
-                                Federal, Estaduais e Municipais, respeitada a autonomia de cada ente político.
-
-                                Seu objetivo é o de promover a articulação e integração entre as Mesas de Negociação
-                                Permanente do SUS, a fim de proporcionar a troca de experiências e a construção de
-                                processos de negociação, sintonizados com a agenda de prioridades definida nacionalmente
-                                tendo como objetivo implementar novas metodologias para aprimoramento do processo de
-                                negociação do trabalho no âmbito do SUS, bem como orientar o desenvolvimento das
-                                estratégias e metodologias de negociação do trabalho, visando ao atendimento das
-                                demandas, utilizando formas de resoluções de conflitos decorrentes das relações de
-                                trabalho, tendo em vista as finalidades, princípios e diretrizes do Sistema Único de
-                                Saúde.
-
-                                <br/><br/>
-                                Acesse o sistema <a href="https://mesadenegociacao.navi.ifrn.edu.br/">clicando aqui</a>.<br/>
-                                Veja o registro de software <a href="../files/patents/SiNNP-SUS.pdf">clicando aqui</a>.
-
-                                <hr/>
-                                <span class="categories">
-            <i class="fa fa-tag"></i>
-            Web, SUS
-        </span>
+                                    <i class="fa fa-tag"></i>
+                                    Android, Fisioterapia
+                                </span>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -686,7 +683,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <img class="img-modal-header" src="../img/portfolio/modals/m-mre.png"/>
+                                <img class="img-modal-header" src="../img/portfolio/modals/mre.png"/>
 
                                 <b>Maker Regular Expressions</b>
                                 <br/>
@@ -699,9 +696,9 @@
 
                                 <hr/>
                                 <span class="categories">
-            <i class="fa fa-tag"></i>
-            RegEx, Maker, Python
-        </span>
+                                    <i class="fa fa-tag"></i>
+                                    RegEx, Maker, Python
+                                </span>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -715,7 +712,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <img class="img-modal-header" src="../img/portfolio/modals/m-validate-docbr.png"/>
+                                <img class="img-modal-header" src="../img/portfolio/modals/validate-docbr.png"/>
 
                                 <b>validate-docbr</b>
                                 <br/>
@@ -730,9 +727,38 @@
 
                                 <hr/>
                                 <span class="categories">
-            <i class="fa fa-tag"></i>
-            Documentos, Python
-        </span>
+                                    <i class="fa fa-tag"></i>
+                                    Documentos, Python
+                                </span>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="portolio-adt-extension" tabindex="-1" role="dialog" aria-labelledby=""
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img class="img-modal-header" src="../img/portfolio/modals/adt-extension.png"/>
+
+                                <b>adt-extension</b>
+                                <br/>
+
+                                Pacote Python com extensões de estrutura de dados abstrata.
+
+                                <br/><br/>
+                                Veja a documentação e o código no GitHub <a href="https://github.com/alvarofpp/python-adt-extension">clicando
+                                aqui</a>.
+
+                                <hr/>
+                                <span class="categories">
+                                    <i class="fa fa-tag"></i>
+                                    ADT, Python
+                                </span>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -746,7 +772,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <img class="img-modal-header" src="../img/portfolio/modals/m-odufrn-page.png"/>
+                                <img class="img-modal-header" src="../img/portfolio/modals/odufrn-page.png"/>
 
                                 <b>Open Data UFRN</b>
                                 <br/>
@@ -760,9 +786,38 @@
 
                                 <hr/>
                                 <span class="categories">
-            <i class="fa fa-tag"></i>
-            GitHub, Organização, Dados Abertos, UFRN
-        </span>
+                                    <i class="fa fa-tag"></i>
+                                    GitHub, Organização, Dados Abertos, UFRN
+                                </span>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="portolio-laravel-warehouse" tabindex="-1" role="dialog" aria-labelledby=""
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img class="img-modal-header" src="../img/portfolio/modals/laravel-warehouse.png"/>
+
+                                <b>Laravel Warehouse</b>
+                                <br/>
+
+                                Repositório feito com o intuito de juntar códigos/funcionalidades reutilizáveis para projetos em Laravel.
+
+                                <br/><br/>
+                                Veja o repositório no GitHub <a href="https://github.com/alvarofpp/laravel-warehouse">clicando
+                                aqui</a>.
+
+                                <hr/>
+                                <span class="categories">
+                                    <i class="fa fa-tag"></i>
+                                    GitHub, Repositório, Laravel, PHP
+                                </span>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
