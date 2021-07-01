@@ -5,3 +5,69 @@
 .img-modal-header {
     width: 100%;
 }
+
+ul {
+    list-style-type: circle;
+    margin-top: 10px;
+    padding-left: 18px;
+}
+
+p {
+    margin-top: 10px;
+}
+
+.badge-php {
+    background-color: #6181b6;
+}
+
+.badge-laravel {
+    background-color: #fd4f31;
+}
+
+.badge-postgresql {
+    background-color: #336791;
+}
+
+.badge-javascript {
+    background-color: #f0db4f;
+}
+
+.badge-jquery {
+    background-color: #0769ad;
+}
+
+.badge-html {
+    background-color: #e54d26;
+}
+
+.badge-css {
+    background-color: #3d8fc6;
+}
+
+.badge-bootstrap {
+    background-color: #59407f;
+}
+
+.badge-aws {
+    background-color: #F7A80D;
+}
+
+.badge-docker {
+    background-color: #019bc6;
+}
+
+.badge-python {
+    background-color: #ffd845;
+}
+
+.badge-mysql {
+    background-color: #00758F;
+}
+
+.badge-graphql {
+    background-color: #f4447c;
+}
+
+.badge-google-cloud {
+    background-color: #4285F4;
+}
