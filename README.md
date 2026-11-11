@@ -8,7 +8,7 @@ GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | What | Where |
 |---|---|
 | Resume + open-source projects | `src/data/*.yaml` — **generated**. Source of truth is the private `resume` repo: edit there, then `task site:sync` there. |
-| Case studies (`/work/<slug>`) | `src/content/work/*.md` — one file per achievement; `order` sets position on the home page |
+| Case studies (`/work/<slug>`) | `src/content/work/*.md` — one file per achievement; `order` sets position on the home page; `highlights` lists the start of each resume bullet that should link to the post |
 | UI copy | `src/i18n/en.ts` (a `pt-br.ts` with the same keys comes later) |
 | Design tokens | `src/styles/global.css` (`:root`) |
 
