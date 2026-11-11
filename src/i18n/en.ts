@@ -3,7 +3,7 @@ export default {
   siteTitle: "Álvaro Paiva — Software, Platform & AI Engineer",
   siteDescription:
     "Senior engineer with 10+ years building backends, platforms and cloud infrastructure — now focused on AI-powered developer tooling.",
-  nav: { work: "Work", experience: "Experience", projects: "Open source", contact: "Contact" },
+  nav: { work: "Work", experience: "Experience", education: "Education", projects: "Open source", contact: "Contact" },
   hero: {
     eyebrow: "Senior Software Engineer",
     firstName: "Álvaro",

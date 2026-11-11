@@ -26,6 +26,7 @@ const base = import.meta.env.BASE_URL;
       <nav>
         <a href={`${base}#work`}>{t.nav.work}</a>
         <a href={`${base}#experience`}>{t.nav.experience}</a>
+        <a href={`${base}#education`}>{t.nav.education}</a>
         <a href={`${base}#projects`}>{t.nav.projects}</a>
         <a href={`${base}#contact`}>{t.nav.contact}</a>
       </nav>
@@ -45,5 +46,5 @@ const base = import.meta.env.BASE_URL;
   nav a { text-decoration: none; }
   nav a:hover { color: var(--accent); }
   .footer { padding-top: 28px; padding-bottom: 28px; }
-  @media (max-width: 640px) { nav a:nth-child(-n+3) { display: none; } }
+  @media (max-width: 760px) { nav a:nth-child(-n+4) { display: none; } }
 </style>

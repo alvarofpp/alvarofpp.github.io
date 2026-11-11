@@ -26,13 +26,14 @@ export const resume = yaml.load(resumeRaw) as {
 export const validationNumber = (details: string) => details.match(/Validation number:\s*(\w+)/)?.[1];
 
 // "Brazilian Portuguese (native); English (fluent)." → [{ flag, name, level }]
-const FLAGS: Record<string, string> = { portuguese: "🇧🇷", english: "🇺🇸", spanish: "🇪🇸" };
+// SVG files in public/flags/, not emoji: Windows doesn't render flag emoji (shows "BR").
+const FLAGS: Record<string, string> = { portuguese: "br", english: "us", spanish: "es" };
 export const languages = resume.languages
   .replace(/\.$/, "")
   .split(";")
   .map((raw) => {
     const [, name = raw, level = ""] = raw.trim().match(/^(.*?)\s*\((.*)\)$/) ?? [];
-    const flag = Object.entries(FLAGS).find(([k]) => name.toLowerCase().includes(k))?.[1] ?? "🌐";
+    const flag = Object.entries(FLAGS).find(([k]) => name.toLowerCase().includes(k))?.[1];
     return { flag, name: name.trim(), level };
   });
 

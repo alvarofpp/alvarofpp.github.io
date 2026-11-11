@@ -25,7 +25,19 @@ const caseStudyFor = (bullet: string) =>
         ))}
       </p>
       <p class="tagline">{t.hero.tagline}</p>
-      <a class="btn" href="#work">{t.hero.cta} <span aria-hidden="true">→</span></a>
+      <div class="hero-actions">
+        <a class="btn" href="#work">{t.hero.cta} <span aria-hidden="true">→</span></a>
+        {github && (
+          <a class="icon-btn" href={github} target="_blank" rel="noopener" aria-label={t.contact.github}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          </a>
+        )}
+        {linkedin && (
+          <a class="icon-btn" href={linkedin} target="_blank" rel="noopener" aria-label={t.contact.linkedin}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        )}
+      </div>
       <p class="label loc">{t.hero.location}</p>
     </div>
     <div class="hero-photo">
@@ -144,7 +156,7 @@ const caseStudyFor = (bullet: string) =>
           <p class="label">{t.education.languages}</p>
           <ul class="langs">
             {languages.map((l) => (
-              <li><span class="flag" aria-hidden="true">{l.flag}</span><span>{l.name}</span><span class="label">{l.level}</span></li>
+              <li>{l.flag ? <img class="flag" src={`${base}flags/${l.flag}.svg`} alt="" width="24" height="17" /> : <span />}<span>{l.name}</span><span class="label">{l.level}</span></li>
             ))}
           </ul>
         </div>
@@ -220,6 +232,13 @@ const caseStudyFor = (bullet: string) =>
     padding: 16px 28px; text-decoration: none; font-weight: 500; transition: transform .15s;
   }
   .btn:hover { transform: translateX(4px); }
+  .hero-actions { display: flex; gap: 12px; align-items: stretch; flex-wrap: wrap; }
+  .icon-btn {
+    display: inline-flex; align-items: center; justify-content: center; width: 56px;
+    border: 1px solid var(--ink); color: var(--ink); transition: background .15s, color .15s;
+  }
+  .icon-btn svg { width: 22px; height: 22px; }
+  .icon-btn:hover { background: var(--ink); color: var(--bg); }
   .loc { margin-top: 40px; }
   .hero-photo { position: relative; }
   .photo-frame { aspect-ratio: 4 / 5; overflow: hidden; background: var(--bg-alt); }
@@ -296,7 +315,7 @@ const caseStudyFor = (bullet: string) =>
   .cert-code code { font-size: 12px; background: var(--bg-alt); padding: 1px 6px; }
   .langs { list-style: none; margin: 0; padding: 0; }
   .langs li { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); }
-  .flag { font-size: 20px; line-height: 1; }
+  .flag { width: 24px; height: auto; box-shadow: 0 0 0 1px var(--line); }
   .case-link {
     display: inline-block; margin-left: 6px; font-size: 13px; font-weight: 500; color: var(--accent);
     text-decoration: none; border-bottom: 1px solid currentColor; white-space: nowrap;
