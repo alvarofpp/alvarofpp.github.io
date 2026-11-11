@@ -1,0 +1,57 @@
+# GERADO pelo repo privado resume (task site:sync). Não edite aqui.
+# Portfolio projects — source of truth (en). Repo URL = https://github.com/<repo>
+projects:
+  - repo: alvarofpp/validate-docbr
+    type: Python package
+    description: >-
+      Popular Python package for validating Brazilian documents, with validation
+      for 7 Brazilian documents and more than 450 stars on GitHub.
+  - repo: odufrn/odufrn-downloader
+    type: Python package
+    description: >-
+      Python package to download data from UFRN (Federal University of Rio Grande
+      do Norte)'s open data portal (https://dados.ufrn.br/). Its target audience is
+      students and teachers at the university.
+  - repo: UFRN-URNAI/urnai-tools
+    type: Python package
+    description: >-
+      URNAI Tools is a modular Deep Reinforcement Learning (DRL) toolkit that
+      supports multiple environments, such as PySC2, OpenAI Gym, ViZDoom, and
+      DeepRTS. The main goal of URNAI Tools is to provide an easy-to-use modular
+      platform for the development of DRL agents.
+  - repo: alvarofpp/analysis-ufrn
+    type: Dataset
+    description: >-
+      Streamlit application with some data analysis of UFRN's open data. Very
+      popular with students to help them choose subjects for the term.
+  - repo: alvarofpp/dataset-flights-brazil
+    type: Dataset
+    description: >-
+      Dataset with flights in Brazil registered by ANAC (National Civil Aviation
+      Agency). The repository contains data that has already been processed, as
+      well as scripts to reproduce the entire data collection and processing
+      pipeline.
+  - repo: alvarofpp/dataset-inmet
+    type: Dataset
+    description: >-
+      Dataset with weather data and public weather stations from INMET (National
+      Institute of Meteorology). The repository contains data that has already
+      been processed, as well as scripts to reproduce the entire data collection
+      and processing pipeline.
+  - repo: alvarofpp/docker-antlr4
+    type: Docker
+    description: Docker image for creating Domain-Specific Language (DSL) using ANTLR4.
+  - repo: alvarofpp/docker-linter
+    type: Docker
+    description: A docker image to ensure the code quality of my projects.
+  - repo: alvarofpp/docker-s2client
+    type: Docker
+    description: >-
+      This docker image was built to facilitate the development of scripted bots
+      and research using the s2client-proto.
+  - repo: alvarofpp/network-from-wikipedia
+    type: Script
+    description: >-
+      Script to construct a network graph from Wikipedia pages. It has already
+      been used to produce journalistic material, such as Javier Barriuso (Barri)'s
+      graphs of the different leaders of each political party in Argentina.

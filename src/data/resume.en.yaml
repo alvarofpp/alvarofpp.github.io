@@ -1,0 +1,140 @@
+# GERADO pelo repo privado resume (task site:sync). Não edite aqui.
+# Fonte de verdade do currículo.
+# Toda saída (PDF, docx, markdown) é gerada a partir daqui — não edite os binários.
+# Os nomes ficam em Title Case; o visual MAIÚSCULO é aplicado no CSS (text-transform).
+name: Álvaro Ferreira Pires de Paiva
+
+contact:
+  location: Natal, Brazil
+  email: alvarofepipa@gmail.com
+  links:
+    - label: Linkedin
+      url: https://linkedin.com/in/alvarofpp
+    - label: Portfolio
+      url: https://github.com/alvarofpp
+
+summary:
+  - >-
+    Senior Software Engineer with 10+ years of experience across different
+    industries, specializing in cloud and data center infrastructure,
+    on-premises-to-cloud migrations and, more recently, AI-powered developer
+    tooling.
+  - >-
+    Built AI-driven code review solutions, including a bot that reviews hundreds
+    of Merge Requests daily and an AWS Bedrock-based plugin adopted by multiple
+    teams, bringing LLMs into the development workflow to improve delivery
+    reliability.
+  - >-
+    Designed internal tooling for package management, authentication, and
+    deployment automation; built and maintained CI/CD pipelines with Bash and
+    Python, applied infrastructure-as-code practices, and integrated
+    observability tools to improve engineering velocity and system reliability.
+
+skills:
+  - level: Proficient
+    items: Ansible, AWS, DevOps, Python, Docker, Laravel, PHP, PostgreSQL, Redis, SQL, Shell script, Bash.
+  - level: Intermediate
+    items: Scala, Spark, Kafka, Java, Kubernetes, CircleCI, Datadog, Flask, GitHub Actions, Grafana, JavaScript, Typescript, Jenkins, Linux, MySQL, Numpy, Pandas, Terraform, Django, FastAPI.
+  - level: Beginner
+    items: Apache Flink, Apache Pulsar, GraphQL, Perl, React, Vue.js, Prometheus, Loki, Pulumi.
+
+experience:
+  - company: TripAdvisor
+    position: Senior DevOps Engineer
+    location: Remote
+    dates: 10/2023 – Present
+    description: >-
+      TripAdvisor is a company that operates online travel agencies, comparison
+      shopping websites, and mobile apps with user-generated content.
+    highlights:
+      - >-
+        Reduced the costs of RDS instances by 60% using Lambda to optimize the
+        management of clusters and databases on AWS.
+      - >-
+        Converted Jenkins jobs from Multitop to Pipeline, allowing updates to a
+        more stable environment and plugins, boosting system reliability by 18%.
+      - >-
+        Improved resource synthesis time in AWS deployment pipelines by 41% by
+        coding filters for AWS CDK.
+      - >-
+        Built an AI bot that automatically reviewed hundreds of Merge Requests
+        daily across the company's GitLab, increasing the reliability of
+        delivered code.
+      - >-
+        Developed a plugin, adopted by multiple teams, that used AWS Bedrock to
+        review MRs and PRs without consuming developers' AI quotas.
+  - company: Méliuz
+    position: Senior Platform Engineer
+    location: Remote
+    dates: 11/2021 – 09/2023
+    description: >-
+      Méliuz operates in the context of cashback, and in 2022, it became a digital
+      bank, offering additional financial services such as loans, Bitcoin cashback,
+      and credit cards.
+    highlights:
+      - >-
+        Designed the migration of internal packages (Python and JavaScript) in
+        on-premise company registries to CodeArtifact, allowing the platform team
+        to save time for other tasks and reduce the cost by 16%.
+      - >-
+        Reduced MWAA logging costs in CloudWatch from an estimated $2,500/month to
+        less than $20/month by optimizing the configuration of both environments,
+        allowing for more assertive metrics.
+      - >-
+        Developed Shell scripts for seamless integration with AWS services like
+        SSO, ECR, and CodeArtifact; minimized daily authentication time from 5
+        minutes to under 10 seconds, improving developer productivity.
+  - company: Central do Frete
+    position: Back-end Developer
+    location: Remote
+    dates: 08/2020 – 11/2021
+    description: >-
+      A platform that promotes the connection between carriers and shippers.
+    highlights:
+      - >-
+        Created a volume-based freight calculation service, optimizing cargo
+        packing and reducing space requirements, which slashed freight costs by 22%.
+      - >-
+        Integrated APIs for real-time package tracking, enhancing customer
+        satisfaction; increased the software's value proposition, leading to a 15%
+        rise in client retention.
+  - company: Laboratory of Technological Innovation in Health - LAIS
+    position: Researcher and Software Engineer
+    location: Natal, Brazil
+    dates: 02/2016 – 12/2020
+    description: >-
+      LAIS is active in the healthcare field, offering services at various
+      governmental levels (federal, state, and municipal), and has partnerships
+      with universities worldwide.
+    highlights:
+      - >-
+        Implemented ELK stack and Hadoop data lake, integrating data from 3
+        databases (SIM, SIA, SIH) to support public policy development.
+      - >-
+        Developed 5 web systems for different purposes, including monitoring the
+        use of public money during the pandemic period; management and monitoring
+        of patients in SUS; and academic management of RET-SUS.
+
+education:
+  - institution: Federal University of Rio Grande do Norte
+    qualification: Bachelor's degree, Information Technology
+    location: Natal, Brazil
+    dates: 02/2016 – 09/2021
+    highlights:
+      - >-
+        Completed a minor in computational intelligence, providing the knowledge to
+        work on artificial intelligence and data analysis projects.
+  - institution: Federal Institute of Rio Grande do Norte
+    qualification: Associate's degree, Information Technology
+    location: Pau dos Ferros, Brazil
+    dates: 04/2012 – 12/2015
+
+certifications:
+  - name: AWS Certified Cloud Practitioner
+    dates: 08/2023 – 08/2026
+    details: "Amazon Web Services Training and Certification. Validation number: 1563M4KK9241179R."
+  - name: Advanced Architecting on AWS
+    dates: 09/2023
+    details: Amazon Web Services Training and Certification.
+
+languages: "Brazilian Portuguese (native); English (fluent); Spanish (intermediate)."

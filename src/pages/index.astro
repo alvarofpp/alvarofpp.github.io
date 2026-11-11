@@ -1,0 +1,268 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import t from "../i18n/en";
+import { resume, portfolio } from "../lib/data";
+
+const base = import.meta.env.BASE_URL;
+const work = (await getCollection("work")).sort((a, b) => a.data.order - b.data.order);
+const linkedin = resume.contact.links.find((l) => l.label.toLowerCase() === "linkedin")?.url;
+const github = resume.contact.links.find((l) => l.url.includes("github.com"))?.url;
+const pad = (n: number) => String(n).padStart(2, "0");
+---
+<Base>
+  <!-- Hero -->
+  <section class="hero wrap">
+    <div class="hero-text">
+      <p class="label">{t.hero.eyebrow}</p>
+      <h1 class="display name">{t.hero.firstName}<br />{t.hero.lastName}</h1>
+      <p class="arc">
+        {t.hero.arc.map((step, i) => (
+          <>{i > 0 && <span class="arc-sep">→</span>}<span class:list={{ now: i === t.hero.arc.length - 1 }}>{step}</span></>
+        ))}
+      </p>
+      <p class="tagline">{t.hero.tagline}</p>
+      <a class="btn" href="#work">{t.hero.cta} <span aria-hidden="true">→</span></a>
+      <p class="label loc">{t.hero.location}</p>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <img src={`${base}alvarofpp.jpg`} alt={resume.name} width="1020" height="1000" />
+      </div>
+      <span class="slash" aria-hidden="true"></span>
+      <span class="dot" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <!-- Areas strip -->
+  <div class="strip">
+    <div class="wrap strip-inner label">
+      <span class="dot-sm" aria-hidden="true"></span>
+      {t.areas.map((a) => <span>{a}</span>)}
+      <span class="dot-sm" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <section class="wrap stats">
+    {t.stats.map((s) => (
+      <div class="stat">
+        <span class="display stat-value">{s.value}</span>
+        <span class="label">{s.label}</span>
+      </div>
+    ))}
+  </section>
+
+  <!-- Selected work -->
+  <section id="work" class="section">
+    <div class="wrap">
+      <div class="section-head"><h2 class="display">{t.work.title}</h2></div>
+      <div class="work-grid">
+        {work.map((w, i) => (
+          <a class="work-card" href={`${base}work/${w.id}/`}>
+            <div class:list={["cover", `cover-${i % 3}`]}>
+              <span class="label cover-tag">{pad(i + 1)} · {w.data.tag}</span>
+              <span class="display cover-metric">{w.data.metric}</span>
+            </div>
+            <div class="work-meta">
+              <div>
+                <h3>{w.data.title}</h3>
+                <p class="label">{w.data.company} · {w.data.year}</p>
+              </div>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+            <p class="work-summary">{w.data.summary}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="wrap">
+      <div class="section-head"><h2 class="display">{t.experience.title}</h2></div>
+      <ol class="xp">
+        {resume.experience.map((x, i) => (
+          <li class="xp-item">
+            <span class="display xp-num">{pad(i + 1)}</span>
+            <div class="xp-head">
+              <h3>{x.position}</h3>
+              <p class="xp-company">{x.company}</p>
+              <p class="label">{x.dates} · {x.location}</p>
+            </div>
+            <ul class="xp-highlights">
+              {x.highlights.map((h) => <li>{h}</li>)}
+            </ul>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Toolkit -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2 class="display">{t.skills.title}</h2></div>
+      <div class="skills">
+        {resume.skills.map((s) => (
+          <div class="skill-row">
+            <p class="label">{s.level}</p>
+            <ul class="chips">
+              {s.items.replace(/\.$/, "").split(",").map((i) => <li>{i.trim()}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Open source -->
+  <section id="projects" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="display">{t.projects.title}</h2>
+        {github && <a class="arrow-link" href={github}>{t.contact.github} →</a>}
+      </div>
+      <div class="oss-grid">
+        {portfolio.projects.map((p) => (
+          <a class="oss" href={`https://github.com/${p.repo}`}>
+            <p class="label">{p.type}</p>
+            <h3>{p.repo}</h3>
+            <p>{p.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="cta">
+    <div class="wrap cta-inner">
+      <h2 class="cta-title">{t.contact.title}</h2>
+      <div class="cta-right">
+        <p class="cta-title">{t.contact.subtitle}</p>
+        <div class="cta-links">
+          <a href={`mailto:${resume.contact.email}`}>{resume.contact.email}</a>
+          {linkedin && <a href={linkedin}>{t.contact.linkedin}</a>}
+          {github && <a href={github}>{t.contact.github}</a>}
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Hero */
+  .hero {
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(24px, 4vw, 64px);
+    align-items: center; padding-top: clamp(32px, 6vw, 72px); padding-bottom: clamp(40px, 6vw, 80px);
+  }
+  .name { font-size: clamp(72px, 13vw, 184px); margin: .3em 0 20px; }
+  .arc { display: flex; gap: 12px; align-items: center; font-size: clamp(18px, 2.2vw, 24px); font-weight: 600; margin: 0 0 12px; }
+  .arc-sep { color: var(--ink-soft); font-weight: 400; }
+  .arc .now { color: var(--accent); }
+  .tagline { font-size: clamp(18px, 2vw, 22px); max-width: 30ch; margin: 0 0 32px; color: var(--ink-soft); }
+  .btn {
+    display: inline-flex; gap: 14px; align-items: center; background: var(--accent); color: var(--accent-ink);
+    padding: 16px 28px; text-decoration: none; font-weight: 500; transition: transform .15s;
+  }
+  .btn:hover { transform: translateX(4px); }
+  .loc { margin-top: 40px; }
+  .hero-photo { position: relative; }
+  .photo-frame { aspect-ratio: 4 / 5; overflow: hidden; background: var(--bg-alt); }
+  .photo-frame img {
+    width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%;
+    filter: grayscale(1) contrast(1.15) brightness(.97);
+  }
+  .slash {
+    position: absolute; right: -14px; bottom: 12%; width: 22px; height: 46%;
+    background: var(--accent); transform: skewX(-18deg);
+  }
+  .dot {
+    position: absolute; right: -36px; bottom: -18px; width: 64px; height: 64px;
+    border-radius: 50%; background: var(--accent);
+  }
+
+  /* Areas strip */
+  .strip { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  .strip-inner {
+    display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    padding-top: 18px; padding-bottom: 18px; color: var(--ink); overflow-x: auto;
+  }
+  .strip-inner span { white-space: nowrap; }
+  .dot-sm { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding-top: 56px; padding-bottom: 56px; }
+  .stat { display: flex; flex-direction: column; gap: 8px; border-left: 1px solid var(--line); padding-left: 18px; }
+  .stat-value { font-size: clamp(44px, 5vw, 64px); }
+
+  /* Work */
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .work-card { text-decoration: none; display: flex; flex-direction: column; gap: 14px; }
+  .cover {
+    aspect-ratio: 4 / 3.4; padding: 22px; display: flex; flex-direction: column; justify-content: space-between;
+    transition: transform .2s;
+  }
+  .work-card:hover .cover { transform: translateY(-4px); }
+  .cover-0 { background: var(--ink); color: #fff; }
+  .cover-1 { background: var(--accent); color: var(--accent-ink); }
+  .cover-2 { background: var(--bg-alt); color: var(--ink); border: 1px solid var(--line); }
+  .cover-tag { color: inherit; opacity: .8; }
+  .cover-metric { font-size: clamp(36px, 4vw, 54px); }
+  .work-meta { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+  .work-meta h3 { margin: 0 0 4px; font-size: 20px; line-height: 1.25; }
+  .work-meta .label { margin: 0; }
+  .arrow { font-size: 22px; transition: transform .15s; }
+  .work-card:hover .arrow { transform: translateX(4px); color: var(--accent); }
+  .work-summary { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+  /* Experience */
+  .xp { list-style: none; margin: 0; padding: 0; }
+  .xp-item {
+    display: grid; grid-template-columns: 80px 1fr 1.6fr; gap: 24px;
+    padding: 32px 0; border-top: 1px solid var(--line);
+  }
+  .xp-num { font-size: 40px; color: var(--accent); }
+  .xp-head h3 { margin: 0; font-size: 22px; }
+  .xp-company { margin: 2px 0 6px; font-weight: 500; }
+  .xp-highlights { margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 15px; }
+  .xp-highlights li + li { margin-top: 8px; }
+
+  /* Skills */
+  .skill-row { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 18px 0; border-top: 1px solid var(--line); }
+  .skill-row .label { margin: 6px 0 0; }
+  .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips li { border: 1px solid var(--ink); padding: 4px 12px; font-size: 14px; border-radius: 999px; }
+
+  /* Open source */
+  .oss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .oss { padding: 24px; text-decoration: none; transition: background .15s; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .oss:hover { background: var(--bg-alt); }
+  .oss .label { margin: 0 0 8px; }
+  .oss h3 { margin: 0 0 8px; font-size: 17px; word-break: break-word; }
+  .oss p:last-child { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+  /* CTA */
+  .cta { background: var(--accent); color: var(--accent-ink); padding: clamp(56px, 8vw, 96px) 0; }
+  .cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .cta-title { font-size: clamp(36px, 5vw, 64px); font-weight: 600; line-height: 1.02; letter-spacing: -.02em; margin: 0; }
+  .cta-right { border-left: 1px solid rgba(255,255,255,.5); padding-left: 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
+  .cta-links { display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+  .cta-links a:hover { opacity: .75; }
+
+  @media (max-width: 900px) {
+    .hero, .cta-inner { grid-template-columns: 1fr; }
+    .hero-photo { max-width: 420px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .work-grid { grid-template-columns: 1fr; }
+    .xp-item { grid-template-columns: 56px 1fr; }
+    .xp-highlights { grid-column: 2; }
+    .cta-right { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,.5); padding-top: 32px; }
+  }
+  @media (max-width: 560px) {
+    .skill-row { grid-template-columns: 1fr; gap: 8px; }
+    .slash { right: -6px; } .dot { right: -8px; }
+  }
+</style>

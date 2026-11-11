@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+import t from "../i18n/en";
+
+interface Props { title?: string; description?: string }
+const { title = t.siteTitle, description = t.siteDescription } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL("alvarofpp.jpg", Astro.site)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="topbar wrap">
+      <a class="brand" href={base}>ÁLVARO.PAIVA</a>
+      <nav>
+        <a href={`${base}#work`}>{t.nav.work}</a>
+        <a href={`${base}#experience`}>{t.nav.experience}</a>
+        <a href={`${base}#projects`}>{t.nav.projects}</a>
+        <a href={`${base}#contact`}>{t.nav.contact}</a>
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer class="wrap footer label">{t.footer}</footer>
+  </body>
+</html>
+
+<style>
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding-top: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--ink);
+  }
+  .brand { font-weight: 600; letter-spacing: .12em; text-decoration: none; }
+  nav { display: flex; gap: clamp(12px, 3vw, 32px); font-size: 15px; }
+  nav a { text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+  .footer { padding-top: 28px; padding-bottom: 28px; }
+  @media (max-width: 640px) { nav a:nth-child(-n+3) { display: none; } }
+</style>

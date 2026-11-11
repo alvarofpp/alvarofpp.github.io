@@ -1,0 +1,51 @@
+version: "3"
+
+# Instance id `<repo>-<worktree>`; dots become dashes (compose project names reject them).
+env:
+  COMPOSE_PROJECT_NAME:
+    sh: |
+      repo=$(basename "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")
+      here=$(basename "$(git rev-parse --show-toplevel)")
+      case "$here" in "$repo"|"$repo"-*) name="$here" ;; *) name="$repo-$here" ;; esac
+      echo "$name" | tr '[:upper:].' '[:lower:]-'
+
+tasks:
+  default:
+    cmds: [task --list]
+    silent: true
+
+  dev:up:
+    desc: Sobe o dev server (Astro) atrás do Traefik compartilhado
+    cmds:
+      - docker compose up -d
+      - docker network connect "${COMPOSE_PROJECT_NAME}_default" svc-traefik 2>/dev/null || true
+      - task: dev:url
+
+  dev:down:
+    desc: Derruba o dev server (volume preservado)
+    cmds:
+      - docker network disconnect "${COMPOSE_PROJECT_NAME}_default" svc-traefik 2>/dev/null || true
+      - docker compose down
+
+  dev:destroy:
+    desc: Derruba e remove o volume de node_modules desta instância
+    prompt: Remove os containers e o volume desta instância. Continuar?
+    cmds:
+      - task: dev:down
+      - docker volume rm "${COMPOSE_PROJECT_NAME}_node_modules" 2>/dev/null || true
+
+  dev:url:
+    desc: Mostra a URL desta instância
+    silent: true
+    cmds:
+      - echo "http://site.${COMPOSE_PROJECT_NAME}.localhost"
+
+  dev:logs:
+    desc: Segue os logs do dev server
+    cmds:
+      - docker compose logs -f site
+
+  build:
+    desc: Gera o site estático em dist/ (o mesmo que o CI publica)
+    cmds:
+      - docker compose run --rm --no-deps site sh -c "npm install && npm run build"
