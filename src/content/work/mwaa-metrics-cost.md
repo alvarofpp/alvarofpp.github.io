@@ -3,7 +3,7 @@ title: Taming Airflow metric cardinality
 company: Méliuz
 year: "2022"
 tag: Platform · Observability · FinOps
-summary: Amazon MWAA was publishing thousands of high-cardinality Airflow metrics to CloudWatch, almost none of them used. I traced where they came from and cut them down to what dashboards actually read.
+summary: Amazon MWAA was publishing thousands of high-cardinality Airflow metrics to CloudWatch, almost none of them used. I traced where they came from and cut them down to what the dashboards actually read.
 metric: $2,500 → <$20 / month
 order: 3
 highlights: ["Reduced MWAA metrics costs"]
@@ -13,7 +13,7 @@ highlights: ["Reduced MWAA metrics costs"]
 
 Méliuz ran its data pipelines on **Amazon MWAA** (managed Apache Airflow 2.2.2) in two environments,
 staging and production. Out of the box, MWAA publishes Airflow's StatsD metrics to **CloudWatch as
-custom metrics** — and CloudWatch bills every distinct custom metric, every month.
+custom metrics**, and CloudWatch bills every distinct custom metric, every month.
 
 The CloudWatch bill for MWAA metrics had grown to an estimated **$2,500/month**.
 
@@ -40,13 +40,10 @@ templates, so each template multiplies by the number of DAGs, tasks and states:
 
 Every new DAG or task silently added more billable metrics, and staging doubled everything.
 
-> A small trap along the way: the CloudWatch console caps the per-namespace card at **500**. The
-> real count is the number next to the "Metrics" header — easy to under-read by 4×.
-
 ## What was actually used
 
 Next I compared the inventory with consumption. The team's Airflow dashboard in Datadog read only
-**five** of these metric families — task successes, failures, finished, task duration and DAG run
+**five** of these metric families: task successes, failures, finished, task duration and DAG run
 duration. Thousands of metrics were being paid for and never read.
 
 ## The fix
@@ -58,16 +55,16 @@ MWAA's Airflow UI doesn't expose the configuration, but Airflow supports an allo
 After reviewing the options with the team, we agreed to:
 
 1. **Stop publishing MWAA metrics from staging** altogether.
-2. **Allow-list production** to the three metrics that mattered: `TaskInstanceSuccesses`,
-   `TaskInstanceFailures` and `DAGDurationSuccess`.
+2. **Allow-list production** to the five metrics the dashboard read: `TaskInstanceSuccesses`,
+   `TaskInstanceFailures`, `TaskInstanceFinished`, `TaskInstanceDuration` and `DAGDurationSuccess`.
 
 Both shipped as two pull requests to the platform's infrastructure repository.
 
 ## Impact
 
 - CloudWatch cost for MWAA metrics went from an estimated **$2,500/month to under $20/month**.
-- From **7,932 metrics** to just the essential ones in production — a set that no longer
-  multiplies with every new DAG or task, and nothing at all from staging.
+- From **7,932 metrics** to only the five families the dashboard used, in production only.
+  Staging stopped publishing metrics entirely.
 
 ## Takeaways
 

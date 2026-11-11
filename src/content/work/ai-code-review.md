@@ -20,7 +20,7 @@ same depth of attention.
 - **An AI review bot** that automatically reviews merge requests across the company's GitLab,
   flagging issues before a human reviewer gets to them.
 - **An AWS Bedrock–based plugin** that reviews MRs and PRs without consuming developers'
-  personal AI quotas — so teams could adopt AI review without changing their budgets.
+  personal AI quotas, so teams could adopt AI review without changing their budgets.
 
 ## Impact
 

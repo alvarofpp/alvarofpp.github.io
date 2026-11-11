@@ -12,7 +12,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const base = import.meta.env.BASE_URL;
 ---
-<Base title={`${entry.data.title} — Álvaro Paiva`} description={entry.data.summary}>
+<Base title={`${entry.data.title} | Álvaro Paiva`} description={entry.data.summary}>
   <article class="wrap post">
     <a class="arrow-link back" href={`${base}#work`}>← {t.work.back}</a>
     <p class="label">{entry.data.company} · {entry.data.year} · {entry.data.tag}</p>
