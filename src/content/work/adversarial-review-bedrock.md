@@ -1,10 +1,10 @@
 ---
-title: Adversarial code review with a second model family
+title: A Claude Code plugin for adversarial code review
 company: TripAdvisor
 year: "2026"
 tag: AI · Developer tooling · AWS Bedrock
-summary: Code written with Claude Code gets reviewed by a model from a different family on AWS Bedrock. A second model catches what the first one let slip, so higher-quality code ships, and the review doesn't spend the developer's own AI quota.
-metric: One model writes, another reviews
+summary: A Claude Code plugin that sends the code you just wrote to a model from a different family on AWS Bedrock for review. A second model catches what the first one let slip, so higher-quality code ships, and the review doesn't spend the developer's own AI quota.
+metric: Claude Code plugin
 order: 2
 highlights: ["Developed a plugin, adopted by multiple teams"]
 ---
