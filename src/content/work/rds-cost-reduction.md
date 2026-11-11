@@ -3,7 +3,7 @@ title: Packing more databases into fewer Aurora clusters
 company: TripAdvisor
 year: "2025–2026"
 tag: Cloud · Infrastructure as Code · FinOps
-summary: A single AWS CDK stack per cluster hit CloudFormation's 500-resource limit at around 10 databases. Splitting the deploy into stages pushed that ceiling to 25-30 databases per cluster, and the fleet shrank from more than 60 Aurora clusters to 26.
+summary: A single AWS CDK stack per cluster hit CloudFormation's 500-resource limit at around 10 databases. Splitting the deploy into stages pushed that ceiling to 25-30 databases per cluster, and the fleet shrank from 48 Aurora clusters to about 20.
 metric: −60% RDS cost
 order: 2
 highlights: ["Reduced the costs of RDS instances"]
@@ -60,7 +60,7 @@ carried.
 
 ## Impact
 
-- The fleet went from more than 60 clusters to **26**.
+- The fleet went from **48 clusters to about 20**.
 - RDS cost dropped by **60%**.
 - The deploy is organized by stages, each with one responsibility, so a change to users or
   network access doesn't touch the cluster definition.
