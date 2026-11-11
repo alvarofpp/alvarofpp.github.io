@@ -37,6 +37,8 @@ export default {
     email: "Email",
     linkedin: "LinkedIn",
     github: "GitHub",
+    medium: "Medium",
+    devto: "DEV",
   },
   footer: "Built with Astro · Hosted on GitHub Pages",
 };
