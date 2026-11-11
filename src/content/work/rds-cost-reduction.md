@@ -12,7 +12,7 @@ highlights: ["Reduced the costs of RDS instances"]
 ## Context
 
 The team ran **Aurora PostgreSQL** clusters in a dedicated AWS account, all provisioned with
-AWS CDK. A single stack handled everything related to a cluster: the cluster and its
+AWS CDK, with data flowing in from PostgreSQL databases on-premises. A single stack handled everything related to a cluster: the cluster and its
 configuration, the databases inside it, the users and their access, and the Lambda functions
 that set it all up.
 
@@ -42,6 +42,8 @@ single job:
 3. **Configuration:** the Lambda connects to the cluster and configures it based on the
    resources from the previous stages, creating the databases inside it.
 4. **Network:** grant the network access and permissions each consumer needs.
+5. **Others:** supporting resources such as AWS DMS endpoints and replication tasks, which
+   feed each database with its data from the on-premises PostgreSQL.
 
 No single stack carries the whole cluster anymore, so the 500-resource limit stopped dictating
 how many databases a cluster could hold. The new ceiling was 25-30 databases per cluster.
