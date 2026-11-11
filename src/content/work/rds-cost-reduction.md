@@ -6,6 +6,7 @@ tag: Cloud · FinOps
 summary: Lambda-driven automation for managing RDS clusters and databases on AWS.
 metric: −60% RDS cost
 order: 2
+highlights: ["Reduced the costs of RDS instances"]
 ---
 
 ## Context

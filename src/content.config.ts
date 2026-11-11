@@ -12,6 +12,8 @@ const work = defineCollection({
     summary: z.string(),
     metric: z.string(),
     order: z.number(),
+    // Start of the resume bullet(s) this post expands — those bullets link here
+    highlights: z.array(z.string()).default([]),
   }),
 });
 

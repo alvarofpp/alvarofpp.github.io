@@ -19,9 +19,22 @@ export const resume = yaml.load(resumeRaw) as {
   skills: { level: string; items: string }[];
   experience: Experience[];
   education: { institution: string; qualification: string; location: string; dates: string; highlights?: string[] }[];
-  certifications: { name: string; dates: string; details: string }[];
+  certifications: { name: string; dates: string; details: string; url?: string }[];
   languages: string;
 };
+
+export const validationNumber = (details: string) => details.match(/Validation number:\s*(\w+)/)?.[1];
+
+// "Brazilian Portuguese (native); English (fluent)." → [{ flag, name, level }]
+const FLAGS: Record<string, string> = { portuguese: "🇧🇷", english: "🇺🇸", spanish: "🇪🇸" };
+export const languages = resume.languages
+  .replace(/\.$/, "")
+  .split(";")
+  .map((raw) => {
+    const [, name = raw, level = ""] = raw.trim().match(/^(.*?)\s*\((.*)\)$/) ?? [];
+    const flag = Object.entries(FLAGS).find(([k]) => name.toLowerCase().includes(k))?.[1] ?? "🌐";
+    return { flag, name: name.trim(), level };
+  });
 
 export const portfolio = yaml.load(portfolioRaw) as {
   projects: { repo: string; type: string; description: string }[];

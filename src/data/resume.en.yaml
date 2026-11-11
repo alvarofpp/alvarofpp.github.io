@@ -133,6 +133,8 @@ certifications:
   - name: AWS Certified Cloud Practitioner
     dates: 08/2023 – 08/2026
     details: "Amazon Web Services Training and Certification. Validation number: 1563M4KK9241179R."
+    # Verification page (enter the validation number). Swap for the Credly badge URL if available.
+    url: https://aws.amazon.com/verification
   - name: Advanced Architecting on AWS
     dates: 09/2023
     details: Amazon Web Services Training and Certification.

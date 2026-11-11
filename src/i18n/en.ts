@@ -22,7 +22,13 @@ export default {
   ],
   work: { title: "Selected work", readMore: "Read the case study", back: "Back to home" },
   experience: { title: "Experience" },
-  education: { title: "Education", certifications: "Certifications", languages: "Languages" },
+  education: {
+    title: "Education",
+    certifications: "Certifications",
+    languages: "Languages",
+    validation: "Validation no.",
+    verify: "Verify",
+  },
   projects: { title: "Open source", viewRepo: "View on GitHub" },
   skills: { title: "Toolkit" },
   contact: {

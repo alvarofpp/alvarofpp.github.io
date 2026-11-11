@@ -6,6 +6,7 @@ tag: Platform · Observability
 summary: Reconfiguring Amazon MWAA (managed Airflow) logging in CloudWatch across two environments.
 metric: $2,500 → <$20 / month
 order: 3
+highlights: ["Reduced MWAA logging costs"]
 ---
 
 ## Context

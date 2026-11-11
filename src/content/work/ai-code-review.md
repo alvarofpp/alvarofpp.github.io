@@ -6,6 +6,7 @@ tag: AI · Developer tooling
 summary: A bot that reviews hundreds of merge requests a day, plus an AWS Bedrock plugin adopted by multiple teams.
 metric: 100+ MRs / day
 order: 1
+highlights: ["Built an AI bot", "Developed a plugin, adopted by multiple teams"]
 ---
 
 ## Context
