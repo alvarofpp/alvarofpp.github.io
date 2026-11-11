@@ -77,9 +77,9 @@ experience:
         on-premise company registries to CodeArtifact, allowing the platform team
         to save time for other tasks and reduce the cost by 16%.
       - >-
-        Reduced MWAA logging costs in CloudWatch from an estimated $2,500/month to
-        less than $20/month by optimizing the configuration of both environments,
-        allowing for more assertive metrics.
+        Reduced MWAA metrics costs in CloudWatch from an estimated $2,500/month to
+        less than $20/month by cutting nearly 8,000 high-cardinality Airflow
+        metrics down to the essential ones across both environments.
       - >-
         Developed Shell scripts for seamless integration with AWS services like
         SSO, ECR, and CodeArtifact; minimized daily authentication time from 5

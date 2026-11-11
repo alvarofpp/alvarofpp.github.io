@@ -6,7 +6,7 @@ tag: Platform · Observability · FinOps
 summary: Amazon MWAA was publishing thousands of high-cardinality Airflow metrics to CloudWatch, almost none of them used. I traced where they came from and cut them down to what dashboards actually read.
 metric: $2,500 → <$20 / month
 order: 3
-highlights: ["Reduced MWAA logging costs"]
+highlights: ["Reduced MWAA metrics costs"]
 ---
 
 ## Context
@@ -15,7 +15,7 @@ Méliuz ran its data pipelines on **Amazon MWAA** (managed Apache Airflow 2.2.2)
 staging and production. Out of the box, MWAA publishes Airflow's StatsD metrics to **CloudWatch as
 custom metrics** — and CloudWatch bills every distinct custom metric, every month.
 
-The CloudWatch bill for MWAA had grown to an estimated **$2,500/month**, and nobody could say why.
+The CloudWatch bill for MWAA metrics had grown to an estimated **$2,500/month**.
 
 ## Diagnosis: count first
 
@@ -66,8 +66,8 @@ Both shipped as two pull requests to the platform's infrastructure repository.
 ## Impact
 
 - CloudWatch cost for MWAA metrics went from an estimated **$2,500/month to under $20/month**.
-- From **7,932 metrics** to a small, fixed set that no longer grows with every new DAG or task.
-- Dashboards kept working, and what remained was the signal people actually looked at.
+- From **7,932 metrics** to just the essential ones in production — a set that no longer
+  multiplies with every new DAG or task, and nothing at all from staging.
 
 ## Takeaways
 
