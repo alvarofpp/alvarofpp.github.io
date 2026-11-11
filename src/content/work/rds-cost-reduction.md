@@ -55,6 +55,9 @@ It depended on size:
 - Small databases could be grouped, around 20 to a cluster.
 - Every cluster kept headroom for maintenance and for new databases in the future.
 
+With databases grouped this way, some clusters were also resized to match the load they now
+carried.
+
 ## Impact
 
 - The fleet went from more than 60 clusters to **26**.
@@ -65,4 +68,4 @@ It depended on size:
 ## Takeaway
 
 A per-stack resource limit in the deploy tool was setting how many clusters the company paid
-for. Restructuring the deploy, not resizing instances, is what brought the bill down.
+for. Removing it is what made smarter grouping, and then right-sizing, possible.
