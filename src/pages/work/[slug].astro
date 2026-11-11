@@ -31,4 +31,11 @@ const base = import.meta.env.BASE_URL;
   .metric { background: var(--accent); color: var(--accent-ink); padding: 24px 28px; font-size: clamp(32px, 5vw, 56px); margin-bottom: 48px; }
   .body :global(h2) { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin: 40px 0 12px; }
   .body :global(li + li) { margin-top: 8px; }
+  .body :global(table) { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
+  .body :global(th), .body :global(td) { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+  .body :global(th) { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); border-bottom-color: var(--ink); }
+  .body :global(tr:last-child td) { border-bottom: 0; background: var(--bg-alt); }
+  .body :global(code) { font-size: .88em; background: var(--bg-alt); padding: 1px 6px; }
+  .body :global(blockquote) { margin: 24px 0; padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--bg-alt); }
+  .body :global(blockquote p) { margin: 0; }
 </style>
