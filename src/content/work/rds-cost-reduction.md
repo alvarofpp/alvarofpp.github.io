@@ -68,4 +68,4 @@ carried.
 ## Takeaway
 
 A per-stack resource limit in the deploy tool was setting how many clusters the company paid
-for. Removing it is what made smarter grouping, and then right-sizing, possible.
+for. Working around it is what made smarter grouping, and then right-sizing, possible.
