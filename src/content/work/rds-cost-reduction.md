@@ -5,7 +5,7 @@ year: "2025–2026"
 tag: Cloud · Infrastructure as Code · FinOps
 summary: A single AWS CDK stack per cluster hit CloudFormation's 500-resource limit at around 10 databases. Splitting the deploy into stages pushed that ceiling to 25-30 databases per cluster, and the fleet shrank from 48 Aurora clusters to about 20.
 metric: −60% RDS cost
-order: 2
+order: 3
 highlights: ["Reduced the costs of RDS instances"]
 ---
 

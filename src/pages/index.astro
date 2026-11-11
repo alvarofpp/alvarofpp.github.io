@@ -270,10 +270,10 @@ const caseStudyFor = (bullet: string) =>
   .stat-value { font-size: clamp(44px, 5vw, 64px); }
 
   /* Work */
-  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
   .work-card { text-decoration: none; display: flex; flex-direction: column; gap: 14px; }
   .cover {
-    aspect-ratio: 4 / 3.4; padding: 22px; display: flex; flex-direction: column; justify-content: space-between;
+    aspect-ratio: 16 / 9; padding: 22px; display: flex; flex-direction: column; justify-content: space-between;
     transition: transform .2s;
   }
   .work-card:hover .cover { transform: translateY(-4px); }

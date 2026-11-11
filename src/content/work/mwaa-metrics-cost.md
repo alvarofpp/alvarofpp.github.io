@@ -5,7 +5,7 @@ year: "2022"
 tag: Platform · Observability · FinOps
 summary: Amazon MWAA was publishing thousands of high-cardinality Airflow metrics to CloudWatch, almost none of them used. I traced where they came from and cut them down to what the dashboards actually read.
 metric: $2,500 → <$20 / month
-order: 3
+order: 4
 highlights: ["Reduced MWAA metrics costs"]
 ---
 
