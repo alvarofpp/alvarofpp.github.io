@@ -18,6 +18,9 @@ export const resume = yaml.load(resumeRaw) as {
   summary: string[];
   skills: { level: string; items: string }[];
   experience: Experience[];
+  education: { institution: string; qualification: string; location: string; dates: string; highlights?: string[] }[];
+  certifications: { name: string; dates: string; details: string }[];
+  languages: string;
 };
 
 export const portfolio = yaml.load(portfolioRaw) as {

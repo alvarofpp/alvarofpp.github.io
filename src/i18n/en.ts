@@ -16,12 +16,13 @@ export default {
   areas: ["Backend", "Full Stack", "DevOps", "Platform Engineering", "Cloud / AWS", "AI Tooling"],
   stats: [
     { value: "10+", label: "Years of experience" },
-    { value: "100s", label: "Merge requests reviewed daily by my AI bot" },
+    { value: "100+", label: "Merge requests reviewed daily by my AI bot" },
     { value: "60%", label: "RDS cost cut at TripAdvisor" },
     { value: "450+", label: "GitHub stars on validate-docbr" },
   ],
   work: { title: "Selected work", readMore: "Read the case study", back: "Back to home" },
   experience: { title: "Experience" },
+  education: { title: "Education", certifications: "Certifications", languages: "Languages" },
   projects: { title: "Open source", viewRepo: "View on GitHub" },
   skills: { title: "Toolkit" },
   contact: {

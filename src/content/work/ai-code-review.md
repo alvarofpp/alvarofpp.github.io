@@ -4,7 +4,7 @@ company: TripAdvisor
 year: "2023–now"
 tag: AI · Developer tooling
 summary: A bot that reviews hundreds of merge requests a day, plus an AWS Bedrock plugin adopted by multiple teams.
-metric: 100s of MRs / day
+metric: 100+ MRs / day
 order: 1
 ---
 
