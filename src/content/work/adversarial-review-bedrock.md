@@ -1,9 +1,9 @@
 ---
 title: Adversarial code review with a second model family
 company: TripAdvisor
-year: "2025–2026"
+year: "2026"
 tag: AI · Developer tooling · AWS Bedrock
-summary: Engineers write code with Claude Code. A plugin sends their changes to AWS Bedrock, where a model from a different family reviews them, without spending the developer's own AI quota.
+summary: Engineers write code with Claude Code. A Claude Code plugin sends their changes to AWS Bedrock, where a model from a different family reviews them, without spending the developer's own AI quota.
 metric: Review off the dev quota
 order: 2
 highlights: ["Developed a plugin, adopted by multiple teams"]
@@ -32,6 +32,9 @@ fresh eyes and looking for what the first one let slip.
 
 ## How it works
 
+The tool is a Claude Code plugin, published on the company's internal plugin marketplace, so
+any team can install it and run a review without leaving the tool they write code in.
+
 1. The plugin collects the changes to review, either local changes or the diff of a pull
    request, along with a short description of the project for context.
 2. It sends that payload to an AWS Lambda function.
@@ -42,7 +45,7 @@ The review never touches the developer's quota: it runs on Bedrock, outside it.
 
 ## Impact
 
-- Adopted by multiple teams.
+- Adopted by three teams in its first two months.
 - Developers spend their AI quota only on development; reviews no longer compete for it.
 - Every team got access to adversarial review by a different model family, a stronger check
   than having the same model review its own work.
