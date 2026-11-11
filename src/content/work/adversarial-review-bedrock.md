@@ -4,7 +4,7 @@ company: TripAdvisor
 year: "2026"
 tag: AI · Developer tooling · AWS Bedrock
 summary: Code written with Claude Code gets reviewed by a model from a different family on AWS Bedrock. A second model catches what the first one let slip, so higher-quality code ships, and the review doesn't spend the developer's own AI quota.
-metric: Cross-family AI review
+metric: One model writes, another reviews
 order: 2
 highlights: ["Developed a plugin, adopted by multiple teams"]
 ---
