@@ -45,7 +45,8 @@ Every new DAG or task silently added more billable metrics, and staging doubled 
 
 Next I compared the inventory with consumption. The team's Airflow dashboard in Datadog read only
 five metrics: task successes, task failures, tasks finished, task duration and successful DAG run
-duration. Thousands of metrics were being paid for and never read.
+duration. Thousands of metrics were being paid for and never read, and even among the five, two
+(tasks finished and task duration) were the per-task templates driving most of the count.
 
 ## The fix
 
@@ -56,8 +57,10 @@ allow-list, `metrics.statsd_allow_list`, and our Terraform module for MWAA alrea
 After reviewing the options with the team, we agreed to:
 
 1. Stop publishing MWAA metrics from staging altogether.
-2. Allow-list production to the five metrics the dashboard read: `TaskInstanceSuccesses`,
-   `TaskInstanceFailures`, `TaskInstanceFinished`, `TaskInstanceDuration` and `DAGDurationSuccess`.
+2. Allow-list production to three essential metrics: `TaskInstanceSuccesses` and
+   `TaskInstanceFailures` (one metric each per environment) and `DAGDurationSuccess` (one per DAG).
+   The two per-task metrics were left out on purpose: they cost thousands of series for a
+   level of detail nobody was acting on.
 
 Both shipped as Terraform changes. The investigation, from the first inventory to the agreed
 plan, took two days.
@@ -65,7 +68,11 @@ plan, took two days.
 ## Impact
 
 - CloudWatch cost for MWAA metrics went from an estimated **$2,500/month to under $20/month**.
-- Production now publishes only the five metric types the dashboard reads; staging publishes none.
+- Production went from thousands of series to about a hundred: two fixed metrics plus one per DAG.
+  Staging publishes none.
+- CloudWatch prorates custom metrics by the hour they publish data, and the per-DAG metric only
+  publishes when its DAG runs. That is how the bill landed below $20 rather than at a flat
+  per-metric price.
 
 ## Takeaways
 
