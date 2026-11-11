@@ -1,9 +1,9 @@
 ---
 title: Packing more databases into fewer Aurora clusters
 company: TripAdvisor
-year: "2023–now"
+year: "2025–2026"
 tag: Cloud · Infrastructure as Code · FinOps
-summary: A single AWS CDK stack per cluster hit CloudFormation's 500-resource limit at around 10 databases. Splitting the deploy into stages raised that to 25-30 per cluster, and the fleet shrank from about 70 Aurora clusters to 28.
+summary: A single AWS CDK stack per cluster hit CloudFormation's 500-resource limit at around 10 databases. Splitting the deploy into stages raised that to 25-30 per cluster, and the fleet shrank from about 65 Aurora clusters to 26.
 metric: −60% RDS cost
 order: 2
 highlights: ["Reduced the costs of RDS instances"]
@@ -36,10 +36,11 @@ RDS line was the whole story.
 Instead of one stack per cluster, I split the deploy into several smaller stacks, each with a
 single job:
 
-1. **Cluster:** the Aurora cluster and its configuration.
-2. **Users:** database users and their access.
-3. **Databases:** the Lambda-backed step that connects to the cluster and creates the
-   databases inside it.
+1. **Cluster:** provision the Aurora cluster and its configuration.
+2. **Secrets and users:** create the credentials and database users.
+3. **Configuration:** the Lambda connects to the cluster and configures it based on the
+   resources from the previous stages, creating the databases inside it.
+4. **Network:** grant the network access and permissions each consumer needs.
 
 No single stack carries the whole cluster anymore, so the 500-resource limit stopped dictating
 how many databases a cluster could hold.
@@ -47,11 +48,11 @@ how many databases a cluster could hold.
 ## Impact
 
 - Each cluster went from about **10 databases to 25-30**.
-- The fleet went from about **70 clusters to 28**, hosting the same workload. The two numbers
-  agree: 70 clusters of 10 and 28 clusters of 25 both come to roughly 700 databases.
+- The fleet went from about **65 clusters to 26**, hosting the same workload. The two numbers
+  agree: 65 clusters of 10 and 26 clusters of 25 both come to roughly 650 databases.
 - RDS cost dropped by **60%**.
 - The deploy became easier to reason about. Each stage has one responsibility, so a change to
-  users doesn't touch the cluster definition.
+  users or network access doesn't touch the cluster definition.
 
 ## Takeaways
 
