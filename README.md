@@ -11,6 +11,7 @@ GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Case studies (`/work/<slug>`) | `src/content/work/*.md` — one file per achievement; `order` sets position on the home page; `highlights` lists the start of each resume bullet that should link to the post |
 | UI copy | `src/i18n/en.ts` (a `pt-br.ts` with the same keys comes later) |
 | Design tokens | `src/styles/global.css` (`:root`) |
+| "Hire me through" (Zazmic, Toptal) | `src/pages/index.astro`, section `#hire`; Zazmic logo in `public/partners/`. The Toptal badge is their embed code with classes renamed and scoped, minus the Typekit `@import`, so it can't leak styles into the rest of the page |
 
 ## Dev
 
