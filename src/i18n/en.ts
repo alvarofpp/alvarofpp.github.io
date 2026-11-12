@@ -31,6 +31,12 @@ export default {
   },
   projects: { title: "Open source", viewRepo: "View on GitHub" },
   skills: { title: "Toolkit" },
+  hire: {
+    title: "Hire me through",
+    subtitle: "Prefer to contract through a partner? I'm vetted and available on these platforms.",
+    zazmic: "Zazmic",
+    toptal: { talent: "Top 3% talent", vetted: "Vetted by", cta: "Hire me", label: "Toptal" },
+  },
   contact: {
     title: "Have a problem worth solving?",
     subtitle: "Let's talk.",
