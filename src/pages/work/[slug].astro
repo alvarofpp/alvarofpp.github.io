@@ -38,4 +38,30 @@ const base = import.meta.env.BASE_URL;
   .body :global(code) { font-size: .88em; background: var(--bg-alt); padding: 1px 6px; }
   .body :global(blockquote) { margin: 24px 0; padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--bg-alt); }
   .body :global(blockquote p) { margin: 0; }
+  /* Diagrams: scroll sideways on phones instead of shrinking text to nothing */
+  .body :global(.figure) { margin: 24px 0; }
+  .body :global(.figure-scroll) { overflow-x: auto; border: 1px solid var(--line); background: #fff; }
+  .body :global(.diagram) { display: block; width: 100%; min-width: 680px; height: auto; }
+  .body :global(.diagram text) { font-family: var(--font-body); fill: var(--ink); }
+  .body :global(.diagram .lane) { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; fill: var(--accent); }
+  .body :global(.diagram .title) { font-size: 13px; font-weight: 600; }
+  .body :global(.diagram .sub), .body :global(.diagram .edge) { font-size: 11.5px; fill: var(--ink-soft); }
+  .body :global(.diagram .accent) { fill: var(--accent); }
+  .body :global(figcaption) { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+  /* Numbered timeline with a "where it runs" chip per step */
+  .body :global(ol.steps) { list-style: none; counter-reset: s; margin: 24px 0 0 14px; padding: 0; border-left: 2px solid var(--line); }
+  .body :global(ol.steps li) { position: relative; counter-increment: s; padding: 0 0 20px 28px; margin: 0; }
+  .body :global(ol.steps li::before) { content: counter(s); position: absolute; left: -15px; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); color: var(--accent); font: 700 13px/24px var(--font-body); text-align: center; }
+  .body :global(.where) { display: inline-block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; margin-right: 8px; vertical-align: 2px; }
+  .body :global(.w-gl) { background: var(--bg-alt); color: var(--ink-soft); }
+  .body :global(.w-dp) { background: #fdf1d6; color: #8a5a00; }
+  .body :global(.w-job) { background: #e3e7fd; color: var(--accent); }
+  .body :global(.w-ai) { background: #e2f4e9; color: #1f7a46; }
+  /* Mock of the verdict comment as it appears on a merge request */
+  .body :global(.mr-note) { border: 1px solid var(--line); background: #fff; margin: 16px 0 24px; font-size: 15px; }
+  .body :global(.mr-head) { display: flex; gap: 10px; align-items: center; padding: 10px 14px; background: var(--bg-alt); border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 14px; }
+  .body :global(.avatar) { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); flex: none; }
+  .body :global(.mr-body) { padding: 4px 16px 12px; }
+  .body :global(.mr-body p) { margin: 10px 0; }
+  .body :global(.mr-sentinel) { font-family: ui-monospace, monospace; font-size: 12px; color: var(--ink-soft); border-top: 1px dashed var(--line); padding-top: 8px; }
 </style>
